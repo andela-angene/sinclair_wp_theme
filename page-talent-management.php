@@ -31,9 +31,12 @@
 			<div class="small">Arthur Schopenhauer</div>
 
 			<p>
-				" <strong>
-					Talent hits a target no one else can hit. Genius hits a target <br>
-				</strong> <span class="italic-text">no one else can see.</span>"
+				<?php
+				while(have_posts()){
+					the_post();
+					the_content();
+				}
+				?>
 			</p>
 		</div>
 
@@ -50,17 +53,11 @@
 					</div>
 					<div class="the-text">
 						<div>
-							<span class="pink-text">NEWS</span>/Talent Management
+							<?php the_field('long_text_box') ?>
 						</div>
 
 						<p>
-							A new survey
-							reveals
-							employers
-							have ramped
-							up their
-							educational
-							requirements
+							<?php the_field('long_text_box_content') ?>
 						</p>
 
 						<a href="javascript:void(0)">Find out more</a>
@@ -70,7 +67,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/talent/lion.jpg" alt="case study">
+							<img src="<?php the_field('development'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Development</h2>
@@ -81,7 +78,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img">
-							<img src="<?php bloginfo('template_url'); ?>/images/talent/camera.jpg" alt="case study">
+							<img src="<?php the_field('marketability'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Marketability</h2>
@@ -92,7 +89,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/talent/water.jpg">
+							<img src="<?php the_field('protection'); ?>">
 						</div>
 						<div class="case-hover">
 							<h2>Protection</h2>
@@ -106,15 +103,27 @@
 					</div>
 					<div class="the-text">
 						<div>
-							<span class="pink-text">CASE STUDIES</span>/Talent Management
+							<?php the_field('short_text_box') ?>
 						</div>
 
 						<p>
-							Career Framework: Dimension Data Mapped
+							<?php the_field('short_text_box_content') ?>
 						</p>
 
 						<a href="javascript:void(0)">Find out more</a>
 					</div>
+				</li>
+
+				<li class="case-box hover-type">
+					<div class="case-box-covered"></div>
+					<a href="javascript:void(0)">
+						<div class="case-img ">
+							<img src="<?php the_field('join'); ?>" alt="case study">
+						</div>
+						<div class="case-hover">
+							<h2>Join</h2>
+						</div>
+					</a>
 				</li>
 
 				<li class="case-box video-type ">
@@ -128,23 +137,9 @@
 				</li>
 
 				<li class="case-box hover-type">
-					<div class="case-box-covered"></div>
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/empty.jpg" alt="case study">
-						</div>
-						<div class="case-hover">
-							<h2>Join</h2>
-						</div>
-					</a>
-				</li>
-
-
-
-				<li class="case-box hover-type">
-					<a href="javascript:void(0)">
-						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/talent/snowboard.jpg" alt="case study">
+							<img src="<?php the_field('springboard'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Springboard</h2>
@@ -170,7 +165,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/talent/footstep.jpg" alt="case study">
+							<img src="<?php the_field('transition'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Transition</h2>

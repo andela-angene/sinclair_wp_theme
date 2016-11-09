@@ -9,14 +9,12 @@
 				<img src="<?php bloginfo('template_url'); ?>/images/logo-single.png" alt="logo">
 			</div>
 			<div class="col-sm-8">
-				<h1>
-					Experience,<br>
-					Innovation <br>
-					and Leadership:
-				</h1>
-				<h2>
-					Our track record is testament to our <br> success in changing the <span class="light-text italic-text">status quo.</span>
-				</h2>
+				<?php
+				    while(have_posts()){
+					    the_post();
+					    the_content();
+				    }
+				?>
 			</div>
 		</div>
 		<a class="homepage-chat-logo launch-chatbox" href="javascript:void(0)">
@@ -39,7 +37,7 @@
 							<div class="header-news-text col-sm-6">
 								<h2>Executive <br> Search:</h2>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima dolore consequatur corporis laborum et quisquam, omnis ipsa rem aperiam. Quis, alias qui. Nisi natus repudiandae ut pariatur rem, deserunt nihil.
+									<?php the_field('executive_search'); ?>
 								</p>
 
 
@@ -50,7 +48,7 @@
 								</div>
 							</div>
 							<div class="header-news-img col-sm-6">
-								<img src="<?php bloginfo('template_url'); ?>/images/homepage/glasses.jpg" alt="">
+								<img src="<?php the_field('executive_search_image'); ?>" alt="">
 							</div>
 						</div>
 					</div>
@@ -60,7 +58,7 @@
 							<div class="header-news-text col-sm-6">
 								<h2>Talent <br> Management:</h2>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima dolore consequatur corporis laborum et quisquam, omnis ipsa rem aperiam. Quis, alias qui. Nisi natus repudiandae ut pariatur rem, deserunt nihil.
+									<?php the_field('talent_management'); ?>
 								</p>
 
 
@@ -71,7 +69,7 @@
 								</div>
 							</div>
 							<div class="header-news-img col-sm-6">
-								<img src="<?php bloginfo('template_url'); ?>/images/homepage/telescope.jpg" alt="">
+								<img src="<?php the_field('talent_management_image'); ?>" alt="">
 							</div>
 						</div>
 					</div>
@@ -137,7 +135,7 @@
 
 						<p>02/25/2016</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt facilis sapiente voluptas repudiandae, culpa, est veritatis excepturi qui adipisci vitae, asperiores nostrum be assumenda minima omnis. LOS ANGELES.
+							<?php the_field('thought__leadership'); ?>
 						</p>
 
 					</div>
@@ -146,7 +144,7 @@
 			<div class="col-md-4 home-content-box">
 				<div class="maintain-aspect-r">
 					<div class="maintain-aspect-hold pink-border">
-						<img src="<?php bloginfo('template_url'); ?>/images/homepage/robot.jpg" alt="robot">
+						<img src="<?php the_field('image1'); ?>" alt="robot">
 
 					</div>
 				</div>
@@ -161,7 +159,7 @@
 
 						<p>02/25/2016</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt facilis sapiente voluptas repudiandae, culpa, est veritatis excepturi qui adipisci vitae, asperiores nostrum be assumenda minima omnis. LOS ANGELES.
+							<?php the_field('latest_news'); ?>
 						</p>
 
 					</div>
@@ -180,7 +178,7 @@
 						</div>
 
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt facilis sapielpa, est veritatis excepturi qui adipisci vitae, asperiores nostrum be assumenda minima omnis. LOS ANGELES.
+							<?php the_field('case_study'); ?>
 						</p>
 						<div class="read-more">
 							<a class="pink-text" href="javascript:void(0)">
@@ -193,7 +191,7 @@
 			<div class="col-md-4 home-content-box">
 				<div class="maintain-aspect-r">
 					<div class="maintain-aspect-hold">
-						<img src="<?php bloginfo('template_url'); ?>/images/homepage/planning.jpg" alt="robot">
+						<img src="<?php the_field('image2'); ?>" alt="robot">
 
 					</div>
 				</div>
@@ -207,7 +205,7 @@
 						</div>
 
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt facilis sapielpa, est veritatis excepturi qui adipisci vitae, asperiores nostrum be assumenda minima omnis. LOS ANGELES.
+							<?php the_field('download_introduction'); ?>
 						</p>
 						<div class="read-more">
 							<a class="pink-text" href="javascript:void(0)">
@@ -230,7 +228,7 @@
 						</div>
 						<p>&nbsp;</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt facilis sapiente voluptas repudiandae, culpa, est veritatis excepturi qui adipisci vitae, asperiores nostrum be assumenda minima omnis. LOS ANGELES.
+							<?php the_field('contact_us'); ?>
 						</p>
 
 					</div>
@@ -239,7 +237,7 @@
 			<div class="col-md-4 home-content-box">
 				<div class="maintain-aspect-r">
 					<div class="maintain-aspect-hold">
-						<img src="<?php bloginfo('template_url'); ?>/images/homepage/mail.jpg" alt="robot">
+						<img src="<?php the_field('image3'); ?>" alt="robot">
 
 					</div>
 				</div>
@@ -254,7 +252,7 @@
 						<p>02/25/2016</p>
 
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt facilis sapiente voluptas repudiandae, culpa, est veritatis excepturi qui adipisci vitae, asperiores nostrum be assumenda minima omnis. LOS ANGELES.
+							<?php the_field('download_annual_report'); ?>
 						</p>
 
 					</div>

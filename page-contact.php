@@ -35,8 +35,8 @@
 					<div class="contact-img contact-img-ldn1">
 						<div class="contact-fadeIn">
 							<div class="wrap-contact">
-								<h3>104 Judd Street, London WC1H 9PU</h3>
-								<p class="gray-text">E-mail: info@sinclairfox.org</p>
+								<h3><?php the_field('location1_ad') ?></h3>
+								<p class="gray-text"><?php the_field('location1_email') ?></p>
 
 								<a href="javascript:void(0)">Find out more</a>
 							</div>
@@ -47,7 +47,7 @@
 				<div class="col-md-6">
 					<div class="contact-img contact-img-ldn2">
 						<div class="contact-slideIn">
-							<h1>London</h1>
+							<h1><?php the_field('location1') ?></h1>
 						</div>
 					</div>
 				</div>
@@ -60,8 +60,8 @@
 					<div class="contact-img contact-img-sgp1">
 						<div class="contact-fadeIn">
 							<div class="wrap-contact">
-								<h3>104 Judd Street, London WC1H 9PU</h3>
-								<p class="gray-text">E-mail: info@sinclairfox.org</p>
+								<h3><?php the_field('location2_ad') ?></h3>
+								<p class="gray-text"><?php the_field('location2_email') ?></p>
 
 								<a href="javascript:void(0)">Find out more</a>
 							</div>
@@ -72,7 +72,7 @@
 				<div class="col-md-6">
 					<div class="contact-img contact-img-sgp2">
 						<div class="contact-slideIn">
-							<h1>Singapore</h1>
+							<h1><?php the_field('location2') ?></h1>
 						</div>
 					</div>
 				</div>
@@ -90,8 +90,8 @@
 					<div class="contact-img contact-img-del1">
 						<div class="contact-fadeIn">
 							<div class="wrap-contact">
-								<h3>104 Judd Street, London WC1H 9PU</h3>
-								<p class="gray-text">E-mail: info@sinclairfox.org</p>
+								<h3><?php the_field('location3_ad') ?></h3>
+								<p class="gray-text"><?php the_field('location3_email') ?></p>
 
 								<a href="javascript:void(0)">Find out more</a>
 							</div>
@@ -102,7 +102,7 @@
 				<div class="col-md-6">
 					<div class="contact-img contact-img-del2">
 						<div class="contact-slideIn">
-							<h1>Delhi</h1>
+							<h1><?php the_field('location3') ?></h1>
 						</div>
 					</div>
 				</div>
@@ -114,8 +114,8 @@
 					<div class="contact-img contact-img-cwb1">
 						<div class="contact-fadeIn">
 							<div class="wrap-contact">
-								<h3>104 Judd Street, London WC1H 9PU</h3>
-								<p class="gray-text">E-mail: info@sinclairfox.org</p>
+								<h3><?php the_field('location4_ad') ?></h3>
+								<p class="gray-text"><?php the_field('location4_email') ?></p>
 
 								<a href="javascript:void(0)">Find out more</a>
 							</div>
@@ -126,7 +126,7 @@
 				<div class="col-md-6">
 					<div class="contact-img contact-img-cwb2">
 						<div class="contact-slideIn">
-							<h1>Curitiba</h1>
+							<h1><?php the_field('location4') ?></h1>
 						</div>
 					</div>
 				</div>
@@ -138,8 +138,8 @@
 					<div class="contact-img contact-img-chi1">
 						<div class="contact-fadeIn">
 							<div class="wrap-contact">
-								<h3>104 Judd Street, London WC1H 9PU</h3>
-								<p class="gray-text">E-mail: info@sinclairfox.org</p>
+								<h3><?php the_field('location5_ad') ?></h3>
+								<p class="gray-text"><?php the_field('location5_email') ?></p>
 
 								<a href="javascript:void(0)">Find out more</a>
 							</div>
@@ -150,7 +150,7 @@
 				<div class="col-md-6">
 					<div class="contact-img contact-img-chi2">
 						<div class="contact-slideIn">
-							<h1>Chicago</h1>
+							<h1><?php the_field('location5') ?></h1>
 						</div>
 					</div>
 				</div>
@@ -162,8 +162,8 @@
 					<div class="contact-img contact-img-nbo1">
 						<div class="contact-fadeIn">
 							<div class="wrap-contact">
-								<h3>104 Judd Street, London WC1H 9PU</h3>
-								<p class="gray-text">E-mail: info@sinclairfox.org</p>
+								<h3><?php the_field('location6_ad') ?></h3>
+								<p class="gray-text"><?php the_field('location6_email') ?></p>
 
 								<a href="javascript:void(0)">Find out more</a>
 							</div>
@@ -174,7 +174,7 @@
 				<div class="col-md-6">
 					<div class="contact-img contact-img-nbo2">
 						<div class="contact-slideIn">
-							<h1>Nairobi</h1>
+							<h1><?php the_field('location6') ?></h1>
 						</div>
 					</div>
 				</div>

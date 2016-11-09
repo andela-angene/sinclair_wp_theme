@@ -26,7 +26,7 @@
 					</div>
 					<div class="the-text">
 						<div>
-							<span class="pink-text">CASE STUDIES</span>
+							<span class="pink-text"><?php the_field('long_text_box1'); ?></span>
 						</div>
 
 						<p>
@@ -41,7 +41,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/1.jpg" alt="case study">
+							<img src="<?php the_field('new_tech'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>New Tech</h2>
@@ -52,7 +52,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/2.jpg" alt="case study">
+							<img src="<?php the_field('agriculture'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Agriculture</h2>
@@ -63,7 +63,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/4.jpg" alt="case study">
+							<img src="<?php the_field('energy'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Energy</h2>
@@ -94,7 +94,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/3.jpg" alt="case study">
+							<img src="<?php the_field('recycle'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Recycle</h2>
@@ -115,7 +115,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/5.jpg" alt="case study">
+							<img src="<?php the_field('new_market'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>New Market</h2>
@@ -126,7 +126,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/6.jpg" alt="case study">
+							<img src="<?php the_field('china'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>IIoT China</h2>
@@ -137,7 +137,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/7.jpg" alt="case study">
+							<img src="<?php the_field('regulation'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Regulation</h2>
@@ -148,7 +148,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/11.jpg" alt="case study">
+							<img src="<?php the_field('recruitment'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Recruitment</h2>
@@ -159,7 +159,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/9.jpg" alt="case study">
+							<img src="<?php the_field('robotics'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Robotics</h2>
@@ -173,17 +173,11 @@
 					</div>
 					<div class="the-text">
 						<div>
-							<span class="pink-text">NEWS</span>/Talent Management
+							<?php the_field('long_text_box2'); ?>
 						</div>
 
 						<p>
-							A new survey <br>
-							reveals <br>
-							employers <br>
-							have ramped <br>
-							up their <br>
-							educational <br>
-							requirements <br>
+							<?php the_field('long_text_box1_content'); ?>
 
 						</p>
 
@@ -194,7 +188,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/10.jpg" alt="case study">
+							<img src="<?php the_field('printer'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>4D Printer</h2>
@@ -205,7 +199,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/8.jpg" alt="case study">
+							<img src="<?php the_field('factory'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Factory</h2>
@@ -216,7 +210,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/12.jpg" alt="case study">
+							<img src="<?php the_field('satellite'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Satellite</h2>
@@ -247,7 +241,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/13.jpg" alt="case study">
+							<img src="<?php the_field('car_driverless'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>Car Driverless</h2>
@@ -258,7 +252,7 @@
 				<li class="case-box hover-type">
 					<a href="javascript:void(0)">
 						<div class="case-img ">
-							<img src="<?php bloginfo('template_url'); ?>/images/case-images/14.jpg" alt="case study">
+							<img src="<?php the_field('llot_ag'); ?>" alt="case study">
 						</div>
 						<div class="case-hover">
 							<h2>IIot Ag</h2>

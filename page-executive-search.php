@@ -27,28 +27,24 @@
 	<div class="container">
 
 		<div class="row">
+			<?php
+			while(have_posts()):
+			the_post();
+			$content = split_content();
+			?>
 			<div class="col-md-6 text-box text-box-100">
 				<div class="maintain-aspect-r">
 					<div class="maintain-aspect-hold">
 						<div class="col-sm-6 text-box-left">
-							<h3>
-								Lead with <span class="pink-text">purpose</span> and sustain SUPERIOR results.
-							</h3>
-							<h1 class="h1-float-left">L</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia laboriosam, animi rem neque recusandae obcaecati quaerat, ut <span class="pink-text">accusantium voluptatem</span> veniam suscipit beatae aspernatur veritatis. Deserunt tempora nisi, corporis voluptatum minus atque, velit?
-							</p>
-
+							<?php echo wpautop($content[0]); ?>
 						</div>
 						<div class="col-sm-6 text-box-left">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed beatae laborum fugiat, voluptatibus, ea omnis quod <span class="pink-text">accusantium voluptatem</span>accusantium voluptatem. Doloribus in, ad. Laudantium impedit doloribus accusantium et sed! Libero,<span class="pink-text">accusantium voluptatem</span> dolorem, nam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae odio nobis ipsa quas, nisi deserunt, quis repellendus non ut beatae.
-							</p>
+							<?php echo wpautop($content[1]); ?>
 						</div>
 					</div>
 				</div>
-
 			</div>
+			<?php endwhile; ?>
 			<div class="col-md-6 image-box ">
 				<img src="<?php bloginfo('template_url'); ?>/images/executive/1.jpg" alt="executive">
 			</div>
@@ -73,7 +69,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Leadership:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('leadership'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
@@ -93,7 +89,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Acquisition:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('acquisition'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
@@ -109,7 +105,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Retention:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('retention'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
@@ -132,7 +128,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Review:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('review'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
@@ -162,7 +158,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Risk:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('risk'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
@@ -177,7 +173,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Performance:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('performance'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>

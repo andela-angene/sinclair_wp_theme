@@ -61,25 +61,27 @@
 			</div>
 			<div class="col-md-6 ">
 				<div class="row">
+					<?php
+					while(have_posts()):
+					the_post();
+					$content = split_content();
+					?>
 					<div class="col-xs-6 text-box text-box-sm gray-box-l">
 						<div class="maintain-aspect-r">
 							<div class="maintain-aspect-hold">
-								<h3>Confidence comes from <span class="pink-text">discipline</span> and <span class="pink-text">training.</span></h3>
-								<h1 class="fl-head-text">L</h1>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing el Cumque, reprehenderit dolorem amet?
-								</p>
 
+								<?php echo wpautop($content[0]); ?>
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-6 text-box text-box-sm gray-box-l">
 						<div class="maintain-aspect-r">
 							<div class="maintain-aspect-hold">
-								Lorem ipsum dolor sit amet, consectetur <span class="pink-text">since the 1500s</span> adipisicing elit. Optio saepe suscipit, quisquam esse quidem veritatis odio alias consequatur ex ducimus cum rem fugit quasi nisi voluptate et magni iusto. Rem!
+								<?php echo wpautop($content[1]); ?>
 							</div>
 						</div>
 					</div>
+					<?php endwhile; ?>
 				</div>
 			</div>
 		</div>
@@ -99,7 +101,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Training <br>Courses:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('training_courses'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
@@ -114,7 +116,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Our <br>Philosophy:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('our_philosophy'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
@@ -127,7 +129,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Specialised <br>Recruitment:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('specialised_recruitment'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
@@ -152,7 +154,7 @@
 						<div class="maintain-aspect-hold">
 							<h3>Mentorship and <br>Succession:</h3>
 							<p>
-								Transformation succession planning and attracting the best and brightest and ...
+								<?php the_field('mentorship_and_succession'); ?>
 							</p>
 							<div class="text-box-read-more">
 								<a href="javascript:void(0)">Find out more</a>
@@ -165,7 +167,7 @@
 						<div class="maintain-aspect-hold">
 							<h3>Business <br>Development:</h3>
 							<p>
-								Transformation succession planning and attracting the best and brightest and ...
+								<?php the_field('business_development'); ?>
 							</p>
 							<div class="text-box-read-more">
 								<a href="javascript:void(0)">Find out more</a>
@@ -195,7 +197,7 @@
 							<div class="maintain-aspect-hold">
 								<h3>Candidate <br>Generation:</h3>
 								<p>
-									Transformation succession planning and attracting the best and brightest and ...
+									<?php the_field('candidate_generation'); ?>
 								</p>
 								<div class="text-box-read-more">
 									<a href="javascript:void(0)">Find out more</a>
