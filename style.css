@@ -1555,6 +1555,9 @@ footer .footer-copyright p {
 	padding-left: 1em;
 	text-indent: -.7em;
 }
+.about-post .about-read-more a{
+	color: #232426;
+}
 
 .about-post .about-read-more li:before {
 	content: "• ";

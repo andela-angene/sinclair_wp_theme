@@ -361,19 +361,22 @@
 
 <script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
 <script>
-	$.loadManagementPerson = function(name){
-		$('#management-team').load("<?php bloginfo('template_url'); ?>/management-person.txt", function(){
+	$.loadManagementPerson = function(id){
+		$('#management-team').load("<?php bloginfo('template_url'); ?>/management-person.php?id="+id, function(){
 			$('#management-team').addClass('management-person-active');
 		});
 	}
-
+	var currentPostId = $('#about-us-page').data('current-post-id');
+	
 	$('a[href="#management"]').click(function(){
 		if($('#management-team').hasClass('management-person-active')){
-			$('#management-team').load("<?php bloginfo('template_url'); ?>/management-team.txt", function(){
+			$('#management-team').load("<?php bloginfo('template_url'); ?>/management-team.php?id="+currentPostId, function(){
 				$('#management-team').removeClass('management-person-active');
 			});
 		}
 	});
+
+
 </script>
 </body>
 </html>

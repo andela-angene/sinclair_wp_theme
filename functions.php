@@ -87,13 +87,13 @@ add_action( 'after_setup_theme', 'sinclairfox_content_width', 0 );
  */
 function sinclairfox_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'sinclairfox' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'sinclairfox' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'name'          => esc_html__( 'Read More Sidebar', 'sinclairfox' ),
+		'id'            => 'read-more',
+		'description'   => esc_html__( 'Add Recent post widget here.', 'sinclairfox' ),
+		'before_widget' => '<div class="col-sm-3 about-read-more">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<button class="read-more-btn">',
+		'after_title'   => '</button>',
 	) );
 }
 add_action( 'widgets_init', 'sinclairfox_widgets_init' );
@@ -156,12 +156,27 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
 // split content at the more tag and return an array
-function split_content() {
+function split_content($data = null) {
+	if(isset($data)){
+		$content = explode('[split_here]', $data);
+	}else{
+		$content = explode('[split_here]', get_the_content());
+	}
 
-	$content = explode('[split_here]', get_the_content());
 //	for($c = 0, $csize = count($content); $c < $csize; $c++) {
 //		$content[$c] = apply_filters('the_content', $content[$c]);
 //	}
 	return $content;
 
+}
+
+//Get post excerpt by Id
+function get_excerpt_by_id($post_id) {
+	global $post;
+	$save_post = $post;
+	$post = get_post($post_id);
+	setup_postdata( $post ); // hello
+	$output = get_the_excerpt();
+	$post = $save_post;
+	return $output;
 }

@@ -14,7 +14,7 @@
 
 			<li class="col-sm-3 text-center"><a href="#">STRATEGY <i class="fa fa-circle"></i></a> </li>
 
-			<li class="col-sm-3 text-center"><a href="#">INVESTEMENT CRITERIA <i class="fa fa-circle"></i></a> </li>
+			<li class="col-sm-3 text-center"><a href="#">INVESTMENT CRITERIA <i class="fa fa-circle"></i></a> </li>
 
 		</ul>
 	</div>
@@ -39,16 +39,20 @@
 
 
 <section class="about-us-cover">
-	<img src="<?php bloginfo('template_url'); ?>/images/venture/cover-img.jpg" alt="venture">
+	<img src="<?php the_field('cover_image'); ?>" alt="venture">
 </section>
 
 
 <section class="about-sinclair-wt">
 	<div class="container">
 		<div class="row">
+			<?php
+			while(have_posts()):
+			the_post();
+			$content = split_content();
+			?>
 			<div class="col-sm-4">
-				<h1 class="pink-text"><strong>Sinclair Fox</strong></h1>
-				<h2><strong>IS A</strong><span class="italic-text">DIFFERENT</span><strong>KIND OF EUROPEAN VENTURE FIRM</strong></h2>
+				<?php echo wpautop($content[0]); ?>
 				<br>
 
 				<a href="<?php bloginfo('url'); ?>/case-studies"><h3 class="pink-text">VIEW OUR TRAINING CASE STUDIES:</h3></a>
@@ -58,27 +62,18 @@
 				<div class="line-div">Organizing for the future <a href="#">></a></div>
 			</div>
 			<div class="col-sm-4">
-				<h1 class="fl-head-text">L</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt voluptatum accusantium vitae quod amet tenetur ipsum at quasi libero <span class="pink-text">voluptas culpa ipsa porro quos</span> quibusdam, dolores vero sequi veniam sed odio tempore cumque alias voluptates hic itaque magnam! Eius, natus.
-				</p><br><br>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt voluptatum accusantium vitae quod amet tenetur ipsum at quasi libero <span class="pink-text">voluptas culpa ipsa porro quos</span> quibusdam, dolores vero sequi veniam sed odio tempore cumque alias voluptates hic itaque magnam! Eius, natus.
-				</p>
+				<?php echo wpautop($content[1]); ?>
 			</div>
 			<div class="col-sm-4">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt voluptatum accusantium vitae quod amet tenetur ipsum at quasi libero <span class="pink-text">voluptas culpa ipsa porro quos</span>
-				</p><br><br>
-				<p>
-					Lorem ipse quod amet tenetur ipsum at quasi libero <span class="pink-text">voluptas culpa ipsa porro quos</span>
-				</p><br><br>
+				<?php echo wpautop($content[2]); ?>
+				<br><br>
 				<a href="<?php bloginfo('url'); ?>/case-studies"><h3 class="pink-text">VIEW OUR TRAINING CASE STUDIES:</h3></a>
 
 				<div class="line-div">The new consumer <a href="#">></a></div>
 				<div class="line-div">Internet of Things <a href="#">></a></div>
 				<div class="line-div">Organizing for the future <a href="#">></a></div>
 			</div>
+			<?php endwhile; ?>
 		</div>
 	</div>
 </section>
@@ -88,31 +83,31 @@
 
 		<div class="row practice-item-r venture-up0 venture-item">
 			<div class="col-sm-4 text-box ">
-				<h1>Portfolio <br> &nbsp;</h1>
+				<h1>Portfolio: <br> &nbsp;</h1>
 				<p>
-					Transformation succession planning and attracting the best and brightest and ...
+					<?php the_field('portfolio'); ?>
 				</p>
 				<div class="text-box-read-more">
 					<a href="javascript:void(0)">Find out more</a>
 				</div>
 			</div>
 			<div class="col-sm-8 venture-image pad0">
-				<img src="<?php bloginfo('template_url'); ?>/images/venture/portfolio.jpg" alt="">
+				<img src="<?php the_field('portfolio_image'); ?>" alt="">
 			</div>
 		</div>
 
 		<div class="row practice-item-l venture-up1 venture-item">
 			<div class="col-sm-4 text-box ">
-				<h1>Team <br> &nbsp;</h1>
+				<h1>Team: <br> &nbsp;</h1>
 				<p>
-					Transformation succession planning and attracting the best and brightest and ...
+					<?php the_field('team'); ?>
 				</p>
 				<div class="text-box-read-more">
 					<a href="javascript:void(0)">Find out more</a>
 				</div>
 			</div>
 			<div class="col-sm-8 venture-image pad0">
-				<img src="<?php bloginfo('template_url'); ?>/images/venture/swim.jpg" alt="">
+				<img src="<?php the_field('team_image'); ?>" alt="">
 			</div>
 		</div>
 
@@ -120,29 +115,29 @@
 			<div class="col-sm-4 text-box ">
 				<h1>Strategy:<br> &nbsp;</h1>
 				<p>
-					Transformation succession planning and attracting the best and brightest and ...
+					<?php the_field('strategy'); ?>
 				</p>
 				<div class="text-box-read-more">
 					<a href="javascript:void(0)">Find out more</a>
 				</div>
 			</div>
 			<div class="col-sm-8 venture-image pad0">
-				<img src="<?php bloginfo('template_url'); ?>/images/venture/strategy.jpg" alt="">
+				<img src="<?php the_field('strategy_image'); ?>" alt="">
 			</div>
 		</div>
 
 		<div class="row practice-item-l venture-up3 venture-item">
 			<div class="col-sm-4 text-box ">
-				<h1>Team <br> &nbsp;</h1>
+				<h1>INVESTMENT <br> CRITERIA:</h1>
 				<p>
-					Transformation succession planning and attracting the best and brightest and ...
+					<?php the_field('investment'); ?>
 				</p>
 				<div class="text-box-read-more">
 					<a href="javascript:void(0)">Find out more</a>
 				</div>
 			</div>
 			<div class="col-sm-8 venture-image pad0">
-				<img src="<?php bloginfo('template_url'); ?>/images/venture/investment.jpg" alt="">
+				<img src="<?php the_field('investment_image'); ?>" alt="">
 			</div>
 		</div>
 

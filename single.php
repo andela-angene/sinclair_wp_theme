@@ -41,18 +41,27 @@
 				<div class="article-news-content">
 					<?php
 						the_content();
-					endwhile;
 					?>
 
 				</div>
 			</div>
-			<div class="col-sm-3 author-sidebar">
-				<img class="about-passport" src="<?php bloginfo('template_url'); ?>/images/article-news/article-author.jpg" alt="">
-				<h3>Vivian Hunt</h3>
 
-				<p>Date: <strong>11-8-2016</strong> <br>
-					Office: <strong>London</strong> <br>
-					Categories: <strong>Technology</strong></p>
+
+
+			<div class="col-sm-3 author-sidebar">
+				<?php if(!empty(get_field('author_image'))){ ?>
+					<img class="about-passport" src="<?php the_field('author_image') ?>" alt="author">
+				<?php }else{ ?>
+					<img class="about-passport" src="<?php bloginfo('template_url'); ?>/images/article-news/article-author.jpg" alt="">
+				<?php } ?>
+
+				<h3><?php the_field('author'); ?></h3>
+
+				<p>Date: <strong><?php echo get_the_date('d-n-Y'); ?></strong> <br>
+					<?php if(!empty(get_field('office'))){ ?>
+						Office: <strong><?php the_field('office'); ?></strong> <br>
+					<?php } ?>
+					Categories: <strong><?php echo (get_the_category()[0]->name); ?></strong></p>
 
 				<div class="socail-icons">
 					<a href="#"><i class="fa fa-twitter"></i></a>
@@ -61,6 +70,9 @@
 					<a href="#"><i class="fa fa-facebook"></i></a>
 				</div>
 			</div>
+
+
+			
 		</div>
 	</div>
 </section>
@@ -80,15 +92,12 @@
 
 
 			</div>
-			<div class="col-sm-3 about-read-more">
-				<button class="read-more-btn">READ MORE</button>
 
-				<ul>
-					<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-					<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-					<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-					<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-				</ul>
+				<?php if(is_active_sidebar('read-more')){
+					dynamic_sidebar('read-more');
+				}; ?>
+
+				
 			</div>
 		</div>
 	</div>
@@ -107,22 +116,31 @@
 				<?php the_field('news-section-3-content'); ?>
 
 			</div>
+			
+			
 			<div class="col-sm-3 about-read-more read-more-top-img">
-				<img src="<?php bloginfo('template_url'); ?>/images/article-news/article-hand.jpg" alt="">
+				<?php
+				    $post_id = get_field('featured_post')->ID;
+				?>
+				
+				<?php echo get_the_post_thumbnail($post_id); ?>
 				<div class="read-more-div">
-					<button class="read-more-btn">READ MORE</button>
+					<a href="<?php echo get_post_permalink($post_id); ?>" class="link-rm-default">
+						<button class="read-more-btn">READ MORE</button>
+					</a>
 					<div>
 						<strong>
-							Sean Parker gives $250 Million donation to help institution Cure Cancer
+							<?php echo get_excerpt_by_id($post_id); ?>
 						</strong>
 					</div>
 				</div>
-
-
 			</div>
+
 		</div>
 	</div>
 </section>
+
+<?php endwhile; ?>
 
 
 <?php get_footer(); ?>

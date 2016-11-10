@@ -45,10 +45,6 @@
 			background-image: url("<?php bloginfo('template_url'); ?>/images/cover-img.png");
 		}
 
-		.about-tabs .tab-content #core-values .panel-text-div {
-			background-image: url("<?php bloginfo('template_url'); ?>/images/about-us/about-mountain1.jpg");
-		}
-
 		.about-tabs .tab-content #what-we-do .panel-text-div {
 			background-image: url("<?php bloginfo('template_url'); ?>/images/about-us/about-mountain1.jpg");
 		}

@@ -1,5 +1,14 @@
 <?php get_header(); ?>
+<style>
+	.about-tabs .tab-content #core-values .panel-text-div {
+		background-image: url("<?php the_field('core_values_cover_image'); ?>");
+	}
+</style>
 
+<?php
+	while(have_posts()): the_post();
+	$current_post_ID = get_the_ID();
+?>
 
 <div class="sticky-register-footer">
 	<div class="container">
@@ -19,7 +28,7 @@
 </div>
 
 
-<section class=" about-us">
+<section id="about-us-page" class="about-us" data-current-post-id="<?php the_ID(); ?>">
 
 	<div class="about-tabs">
 
@@ -50,12 +59,12 @@
 
 			<div role="tabpanel" class="tab-pane fade in active" id="core-values">
 
+
 				<div class="panel-text-div">
 					<div class="panel-text">
 						<h1>Core<br>Values</h1>
 						<p>
-							Vivian Hunt, management partner serves healthcare.<br>
-							She helps lead our work in gender diversity
+							<?php the_field('sub_heading'); ?>
 						</p>
 					</div>
 				</div>
@@ -66,21 +75,25 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-9">
-									<h2>Vivian Hunt and Company's core values</h2>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
+									<h2><?php the_field('section1_heading'); ?></h2>
+									<?php wpautop(the_field('section1_content')); ?>
 								</div>
-								<div class="col-sm-3">
-									<img class="about-passport" src="<?php bloginfo('template_url'); ?>/images/vivian.jpg" alt="">
-									<h3>Vivian Hunt</h3>
 
-									<p>Date: <strong>11-8-2016</strong> <br>
-										Office: <strong>London</strong> <br>
-										Categories: <strong>Technology</strong></p>
+
+								<div class="col-sm-3 author-sidebar">
+									<?php if(!empty(get_field('author_image'))){ ?>
+										<img class="about-passport" src="<?php the_field('author_image') ?>" alt="author">
+									<?php }else{ ?>
+										<img class="about-passport" src="<?php bloginfo('template_url'); ?>/images/article-news/article-author.jpg" alt="">
+									<?php } ?>
+
+									<h3><?php the_field('author'); ?></h3>
+
+									<p>Date: <strong><?php echo get_the_date('d-n-Y'); ?></strong> <br>
+										<?php if(!empty(get_field('office'))){ ?>
+											Office: <strong><?php the_field('office'); ?></strong> <br>
+										<?php } ?>
+										Categories: <strong><?php echo (get_the_category()[0]->name); ?></strong></p>
 
 									<div class="socail-icons">
 										<a href="#"><i class="fa fa-twitter"></i></a>
@@ -96,7 +109,7 @@
 
 
 					<div class="about-separate-img">
-						<img src="<?php bloginfo('template_url'); ?>/images/about-separate.jpg" alt="">
+						<img src="<?php the_field('section1_image'); ?>" alt="">
 					</div>
 
 
@@ -104,13 +117,8 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-9">
-									<h2>Lorem Ipsum is simply dummy text.</h2>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat <a href="<?php bloginfo('url');  ?>" class="pink-text italic-text">read our Case Studies</a>
-									</p>
+									<h2><?php the_field('section2_heading'); ?></h2>
+									<?php wpautop(the_field('section2_content')); ?>
 
 									<!--                        about-case-studies -->
 									<section class="about-case-studies">
@@ -163,16 +171,11 @@
 										</div>
 									</section>
 								</div>
-								<div class="col-sm-3 about-read-more">
-									<button class="read-more-btn">READ MORE</button>
 
-									<ul>
-										<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-										<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-										<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-										<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-									</ul>
-								</div>
+								<?php if(is_active_sidebar('read-more')){
+									dynamic_sidebar('read-more');
+								}; ?>
+
 							</div>
 						</div>
 					</section>
@@ -181,20 +184,21 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-9">
-									<h2>Lorem Ipsum is simply dummy text.</h2>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
-
+									<h2><?php the_field('section3_heading'); ?></h2>
+									<?php wpautop(the_field('section3_content')); ?>
 								</div>
+
+
 								<div class="col-sm-3 about-read-more">
-									<button class="read-more-btn">READ MORE</button>
+									<?php
+									$post_id = get_field('featured_post')->ID;
+									?>
+									<a href="<?php echo get_post_permalink($post_id); ?>" class="link-rm-default">
+										<button class="read-more-btn">READ MORE</button>
+									</a>
 									<div>
 										<strong>
-											Sean Parker gives $250 Million donation to help institution Cure Cancer
+											<?php echo get_excerpt_by_id($post_id); ?>
 										</strong>
 									</div>
 
@@ -214,11 +218,9 @@
 						<div class="col-sm-6 about-box-half">
 							<div class="maintain-aspect-r">
 								<div class="maintain-aspect-hold box-half">
-									<img src="<?php bloginfo('template_url'); ?>/images/about-us/bridge.jpg" alt="">
+									<img src="<?php the_field('what_we_do_cover_image'); ?>" alt="">
 									<div class="ab-text-box">
-										<h2>
-											Choose a job you <strong>love,</strong> and you will <strong>never have to work</strong> a day in <strong class="italic-text">your life.</strong>
-										</h2>
+										<?php the_field('what_we_do_sub_heading'); ?>
 									</div>
 									<div class="logo-div">
 										<img src="<?php bloginfo('template_url'); ?>/images/logo-single.png" alt="">
@@ -232,7 +234,7 @@
 								<div class="col-sm-6 about-box">
 									<div class="maintain-aspect-r">
 										<div class="maintain-aspect-hold box dark-box">
-											<img src="<?php bloginfo('template_url'); ?>/images/about-us/snail.jpg" alt="">
+											<img src="<?php the_field('step1'); ?>" alt="">
 											<div class="text-dark-bg">
 												Step 1
 											</div>
@@ -242,7 +244,7 @@
 								<div class="col-sm-6 about-box">
 									<div class="maintain-aspect-r">
 										<div class="maintain-aspect-hold box dark-box">
-											<img src="<?php bloginfo('template_url'); ?>/images/about-us/snail.jpg" alt="">
+											<img src="<?php the_field('step2'); ?>" alt="">
 											<div class="text-dark-bg">
 												Step 2
 											</div>
@@ -255,7 +257,7 @@
 								<div class="col-sm-6 about-box">
 									<div class="maintain-aspect-r">
 										<div class="maintain-aspect-hold box dark-box">
-											<img src="<?php bloginfo('template_url'); ?>/images/about-us/snail.jpg" alt="">
+											<img src="<?php the_field('step3'); ?>" alt="">
 											<div class="text-dark-bg">
 												Step 3
 											</div>
@@ -265,7 +267,7 @@
 								<div class="col-sm-6 about-box">
 									<div class="maintain-aspect-r">
 										<div class="maintain-aspect-hold box dark-box">
-											<img src="<?php bloginfo('template_url'); ?>/images/about-us/snail.jpg" alt="">
+											<img src="<?php the_field('step4'); ?>" alt="">
 											<div class="text-dark-bg">
 												Step 4
 											</div>
@@ -306,7 +308,7 @@
 						<div class="col-sm-3 about-box">
 							<div class="maintain-aspect-r">
 								<div class="maintain-aspect-hold box dark-box">
-									<img src="<?php bloginfo('template_url'); ?>/images/about-us/snail.jpg" alt="">
+									<img src="<?php the_field('step5'); ?>" alt="">
 									<div class="text-dark-bg">
 										Step 5
 									</div>
@@ -316,7 +318,7 @@
 						<div class="col-sm-3 about-box">
 							<div class="maintain-aspect-r">
 								<div class="maintain-aspect-hold box dark-box">
-									<img src="<?php bloginfo('template_url'); ?>/images/about-us/snail.jpg" alt="">
+									<img src="<?php the_field('step6'); ?>" alt="">
 									<div class="text-dark-bg">
 										Step 6
 									</div>
@@ -329,13 +331,8 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-9">
-									<h2>Every day brings new choices.</h2>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
+									<h2><?php the_field('what_we_do_section_heading'); ?></h2>
+									<?php the_field('what_we_do_section_content'); ?>
 
 
 								</div>
@@ -374,34 +371,88 @@
 						<div class="col-sm-6 about-box-half-e">
 
 							<div class="row">
+
+								<?php
+								$args = array(
+									'post_type' => 'management_team'
+								);
+								$team = array();
+
+								$post_query = new WP_Query($args);
+								if($post_query->have_posts() ) {
+									$post_counter = 0;
+									while($post_query->have_posts() ) :
+										$post_counter++;
+										$post_query->the_post();
+										$team_member = array(
+											id => get_the_ID(),
+											name => get_field('full_name'),
+											title => get_field('title'),
+											photo => get_field('photo'),
+											description => get_field('description'),
+											twitter_url => get_field('twitter_url'),
+											facebook_url => get_field('facebook_url')
+										);
+										array_push($team, $team_member);
+
+										?>
+
+									<?php endwhile; }; ?>
+
+
+								<?php
+								    $team_member = $team[0];
+								?>
 								<div class="col-sm-6 about-box">
 									<div class="maintain-aspect-r">
-										<a href="javascript:void(0)" onclick="$.loadManagementPerson()" class="link-rm-default"><div class="maintain-aspect-hold box dark-box">
-												<img src="<?php bloginfo('template_url'); ?>/images/about-us/walter.jpg" alt="">
+										<a href="javascript:void(0)" onclick="$.loadManagementPerson(<?php echo $team_member['id']; ?>)" class="link-rm-default"><div class="maintain-aspect-hold box dark-box">
+												<img src="<?php echo $team_member['photo']; ?>" alt="">
+												<div class="text-dark-bg">
+													<?php echo $team_member['name']; ?>
+												</div>
 											</div></a>
 									</div>
 								</div>
+
+								<?php
+								$team_member = $team[1];
+								?>
 								<div class="col-sm-6 about-box">
 									<div class="maintain-aspect-r">
-										<a href="javascript:void(0)" class="link-rm-default" onclick="$.loadManagementPerson()"><div class="maintain-aspect-hold box dark-box">
-												<img src="<?php bloginfo('template_url'); ?>/images/about-us/alberto.jpg" alt="">
+										<a href="javascript:void(0)" onclick="$.loadManagementPerson(<?php echo $team_member['id']; ?>)" class="link-rm-default"><div class="maintain-aspect-hold box dark-box">
+												<img src="<?php echo $team_member['photo']; ?>" alt="">
+												<div class="text-dark-bg">
+													<?php echo $team_member['name']; ?>
+												</div>
 											</div></a>
 									</div>
 								</div>
 							</div>
 
 							<div class="row">
+								<?php
+								$team_member = $team[2];
+								?>
 								<div class="col-sm-6 about-box">
 									<div class="maintain-aspect-r">
-										<a href="javascript:void(0)" class="link-rm-default" onclick="$.loadManagementPerson()"><div class="maintain-aspect-hold box dark-box">
-												<img src="<?php bloginfo('template_url'); ?>/images/about-us/saloman.jpg" alt="">
+										<a href="javascript:void(0)" onclick="$.loadManagementPerson(<?php echo $team_member['id']; ?>)" class="link-rm-default"><div class="maintain-aspect-hold box dark-box">
+												<img src="<?php echo $team_member['photo']; ?>" alt="">
+												<div class="text-dark-bg">
+													<?php echo $team_member['name']; ?>
+												</div>
 											</div></a>
 									</div>
 								</div>
+								<?php
+								$team_member = $team[3];
+								?>
 								<div class="col-sm-6 about-box">
 									<div class="maintain-aspect-r">
-										<a href="javascript:void(0)" class="link-rm-default" onclick="$.loadManagementPerson()"><div class="maintain-aspect-hold box dark-box">
-												<img src="<?php bloginfo('template_url'); ?>/images/about-us/sara.jpg" alt="">
+										<a href="javascript:void(0)" onclick="$.loadManagementPerson(<?php echo $team_member['id']; ?>)" class="link-rm-default"><div class="maintain-aspect-hold box dark-box">
+												<img src="<?php echo $team_member['photo']; ?>" alt="">
+												<div class="text-dark-bg">
+													<?php echo $team_member['name']; ?>
+												</div>
 											</div></a>
 									</div>
 								</div>
@@ -423,6 +474,7 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="col-sm-3 about-box">
 							<div class="maintain-aspect-r">
 								<div class="maintain-aspect-hold box">
@@ -436,46 +488,66 @@
 								</div>
 							</div>
 						</div>
+
+						<?php
+						$team_member = $team[4];
+						?>
 						<div class="col-sm-3 about-box">
 							<div class="maintain-aspect-r">
-								<a href="javascript:void(0)" class="link-rm-default" onclick="$.loadManagementPerson()"><div class="maintain-aspect-hold box dark-box">
-										<img src="<?php bloginfo('template_url'); ?>/images/about-us/leondra.jpg" alt="">
+								<a href="javascript:void(0)" onclick="$.loadManagementPerson(<?php echo $team_member['id']; ?>)" class="link-rm-default"><div class="maintain-aspect-hold box dark-box">
+										<img src="<?php echo $team_member['photo']; ?>" alt="">
+										<div class="text-dark-bg">
+											<?php echo $team_member['name']; ?>
+										</div>
 									</div></a>
 							</div>
 						</div>
+
+						<?php
+						$team_member = $team[5];
+						?>
 						<div class="col-sm-3 about-box">
 							<div class="maintain-aspect-r">
-								<a href="javascript:void(0)" class="link-rm-default" onclick="$.loadManagementPerson()"><div class="maintain-aspect-hold box dark-box">
-										<img src="<?php bloginfo('template_url'); ?>/images/about-us/tom.jpg" alt="">
+								<a href="javascript:void(0)" onclick="$.loadManagementPerson(<?php echo $team_member['id']; ?>)" class="link-rm-default"><div class="maintain-aspect-hold box dark-box">
+										<img src="<?php echo $team_member['photo']; ?>" alt="">
+										<div class="text-dark-bg">
+											<?php echo $team_member['name']; ?>
+										</div>
 									</div></a>
 							</div>
 						</div>
 					</div>
 
+					<?php
+					$args = array(
+						'p' => $current_post_ID,
+						'post_type' => 'any'
+					);
+
+					$post_query = new WP_Query($args);
+					if($post_query->have_posts() ) {
+						while($post_query->have_posts() ) :
+							$post_query->the_post();
+							?>
+
+						<?php endwhile; }; ?>
 					<section class="about-post about-box-desc">
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-9">
-									<h2>Every day brings new choices.</h2>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur in ex beatae maiores dolore vitae expedita aut! Pariatur alias, hic, earum inventore quisquam animi harum atque, consequuntur dignissimos corporis nostrum officiis vel porro tempore, vero nesciunt maiores voluptatem aliquam exercitationem accusamus commodi ratione laudantium. Quasi earum, alias magni id sit, eaque, tenetur similique velit est dignissimos adipisci. Eos facilis soluta impedit quisquam autem, architecto totam repellendus, nam inventore, dolor molestiae, perferendis dolore hic non laudantium recusandae aut in quo sed ea! Soluta magnam et quibusdam nesciunt amet perspiciatis enim quam rem, provident qui accusantium ut iste illum suscipit esse quaerat saepe porro quae illo accusamus eius, aut fugit autem? Illum nisi minima, laboriosam sapiente delectus aperiam laborum vitae ea, quaerat.
-									</p>
+									<h2><?php the_field('management_section_heading'); ?></h2>
+
+									<?php wpautop(the_field('management_section_content')); ?>
 
 
 								</div>
-								<div class="col-sm-3 about-read-more">
-									<button class="read-more-btn">READ MORE</button>
 
-									<ul>
-										<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-										<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-										<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-										<li>Sean Parker gives $250 Million donation to help institution Cure Cancer</li>
-									</ul>
-								</div>
+
+								<?php if(is_active_sidebar('read-more')){
+									dynamic_sidebar('read-more');
+								}; ?>
+
+
 							</div>
 						</div>
 					</section>
@@ -490,46 +562,22 @@
 			<div role="tabpanel" class="tab-pane fade in" id="team-strategy">
 				<div class="container">
 					<div class="strategy-header">
-						<h1>Dear Executives,</h1> <h3>execution commitment</h3><br>
-						<h1 class="pink-text">is not for sale. </h1><h2> You have to <strong>earn it <span class="pink-text">.</span></strong></h2>
+						<?php the_field('strategy_section_heading'); ?>
 					</div>
 
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ducimus velit error quas quam, quidem, laboriosam iusto asperiores in eligendi suscipit dolores nesciunt veniam necessitatibus. Voluptatem a, ducimus distinctio voluptatum.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ducimus velit error quas quam, quidem, laboriosam iusto asperiores in eligendi suscipit dolores nesciunt veniam necessitatibus. Voluptatem a, ducimus distinctio voluptatum.
-					</p>
+					<?php the_field('strategy_section_content'); ?>
 
 					<div class="container-img">
 						<img src="<?php bloginfo('template_url'); ?>/images/about-us/strategy-car.jpg" alt="">
 					</div>
+<!--					Strategy list loop  -->
+					<?php for($i=1; $i<=8; $i++){ ?>
 					<div class="strategy-list-i">
-						<h1><span class="num">2</span> Client List</h1>
-						<h3>- Lorem Ipsum is simply text</h3>
+						<?php the_field('strategy'.$i); ?>
 					</div>
-					<div class="strategy-list-i">
-						<h1><span class="num">3</span> Team Work</h1>
-						<h3>- Lorem Ipsum is simply text</h3>
-					</div>
-					<div class="strategy-list-i">
-						<h1><span class="num">4</span> North America</h1>
-						<h3>- Lorem Ipsum is simply text</h3>
-					</div>
-					<div class="strategy-list-i">
-						<h1><span class="num">5</span> Advertising</h1>
-						<h3>- Lorem Ipsum is simply text</h3>
-					</div>
-					<div class="strategy-list-i">
-						<h1><span class="num">6</span> Technology</h1>
-						<h3>- Lorem Ipsum is simply text</h3>
-					</div>
-					<div class="strategy-list-i">
-						<h1><span class="num">7</span> Risk</h1>
-						<h3>- Lorem Ipsum is simply text</h3>
-					</div>
-					<div class="strategy-list-i">
-						<h1><span class="num">8</span> Media</h1>
-						<h3>- Lorem Ipsum is simply text</h3>
-					</div>
+					<?php } ?>
+
+
 				</div>
 			</div>
 
@@ -568,5 +616,5 @@
 
 </section>
 
-
+<?php endwhile; ?>
 <?php get_footer(); ?>
