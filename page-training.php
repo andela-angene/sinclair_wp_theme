@@ -25,7 +25,7 @@
 
 
 <section class="training-headerpic">
-	<img src="<?php bloginfo('template_url'); ?>/images/training/horserider.jpg" alt="training">
+	<img src="<?php the_field('cover_image'); ?>" alt="training">
 </section>
 
 
