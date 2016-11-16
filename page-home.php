@@ -13,6 +13,7 @@
 				    while(have_posts()){
 					    the_post();
 					    the_content();
+					    $current_post_ID = get_the_ID();
 				    }
 				?>
 			</div>
@@ -83,46 +84,48 @@
 							<h3>Trending</h3>
 							<img src="<?php bloginfo('template_url'); ?>/images/logo-single-w.png" alt="logo">
 						</div>
-						<div class="trending-item trending-item-active">
-							<div class="trending-num">
-								<span>1</span>
-								<div class="trend80"></div>
-							</div>
-							<div class="trending-text">
-								<a class="link-rm-default" href="javascript:void(0)">Transformation succession planning and attracting...</a>
 
-							</div>
-						</div>
-						<div class="trending-item">
-							<div class="trending-num">
-								<span>2</span>
-								<div class="trend80"></div>
-							</div>
-							<div class="trending-text">
-								<a class="link-rm-default" href="javascript:void(0)">Transformation succession planning and attracting...</a>
-							</div>
-						</div>
-						<div class="trending-item">
-							<div class="trending-num">
-								<span>3</span>
-								<div class="trend80"></div>
-							</div>
-							<div class="trending-text">
-								<a class="link-rm-default" href="javascript:void(0)">Transformation succession planning and attracting...</a>
-							</div>
-						</div>
-						<div class="trending-item">
-							<div class="trending-num">
-								<span>4</span>
-								<div class="trend80"></div>
-							</div>
-							<div class="trending-text">
-								<a class="link-rm-default" href="javascript:void(0)">Transformation succession planning and attracting...</a>
-							</div>
-						</div>
+
+						<?php
+						$args = array(
+							'post_type' => 'post'
+						);
+						$post_counter = 0;
+						$post_query = new WP_Query($args);
+						while($post_query->have_posts()): $post_query->the_post();
+							$post_counter++;
+							if($post_counter <= 4):
+								?>
+
+								<div class="trending-item <?php if ($post_counter == 1){echo 'trending-item-active';} ?>">
+									<div class="trending-num">
+										<span><?php echo $post_counter ?></span>
+										<div class="trend80"></div>
+									</div>
+									<div class="trending-text">
+										<a class="link-rm-default" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+									</div>
+								</div>
+
+							<?php endif; endwhile; ?>
+						
 					</div></div>
 			</div>
 		</div>
+
+		<?php
+		$args = array(
+			'p' => $current_post_ID,
+			'post_type' => 'any'
+		);
+		$post_query = new WP_Query($args);
+		if($post_query->have_posts() ) {
+			while($post_query->have_posts() ) :
+				$post_query->the_post();
+				?>
+
+			<?php endwhile; }; ?>
 
 		<div class="row homepage-content-row">
 			<div class="col-md-4 home-content-box">
