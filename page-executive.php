@@ -5,6 +5,12 @@ while(have_posts()): the_post();
 $current_post_ID = get_the_ID();
 endwhile;
 ?>
+<style>
+	.about-tabs .tab-content #risk .panel-text-div {
+		background-image: url("<?php echo the_field('risk_cover_image') ?>");
+	}
+</style>
+
 <div class="sticky-register-footer">
 	<div class="container">
 		<div class="pull-left">
@@ -77,10 +83,11 @@ endwhile;
 				<div class="panel-text-div">
 					<div class="panel-text">
 						<h1>Risk<br>Expertise</h1>
+
 						<p>
-							Vivian Hunt, retention partner serves healthcare.<br>
-							She helps lead our work in gender diversity
+							<?php the_field('risk_sub_heading'); ?>
 						</p>
+
 					</div>
 				</div>
 

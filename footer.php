@@ -367,7 +367,7 @@
 		});
 	}
 	var currentPostId = $('#about-us-page').data('current-post-id');
-	
+
 	$('a[href="#management"]').click(function(){
 		if($('#management-team').hasClass('management-person-active')){
 			$('#management-team').load("<?php bloginfo('template_url'); ?>/management-team.php?id="+currentPostId, function(){

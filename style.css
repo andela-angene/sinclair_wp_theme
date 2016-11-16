@@ -49,16 +49,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 
 @charset "UTF-8";
-
 .fixed-navbar {
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 998;
 }
-.to-upper{
-	text-transform: uppercase;
-}
+
 body {
 	font-family: "NHaasGrotesk", Helvetica, Verdana, Sans-Serif;
 	font-size: 14px;
@@ -137,6 +134,10 @@ body .display-none {
 
 body .pad0 {
 	padding: 0 !important;
+}
+
+.to-upper {
+	text-transform: uppercase;
 }
 
 .navbar {
@@ -278,12 +279,6 @@ body .pad0 {
 	border-radius: 10px;
 	background-color: #fff;
 }
-
-* {
-	min-height: 0;
-	min-width: 0;
-}
-
 
 .navigation {
 	padding: 0;
@@ -635,17 +630,20 @@ body .pad0 {
 }
 
 .post-list ul {
-	padding-left: 15px;
+	list-style: none;
+	padding-left: 0;
 }
 
 .post-list li {
 	padding: 10px 0;
-	color: #E61B86;
+	color: #232426;
 	font-size: 16px;
 }
 
-.post-list li span {
-	color: #232426;
+.post-list li:before {
+	content: "• ";
+	color: #E61B86;
+	/* or whatever color you prefer */
 }
 
 .header {
@@ -1206,35 +1204,6 @@ footer .footer-copyright p {
 	max-height: 200px;
 }
 
-.about-tabs .tab-content .panel-text-div {
-	height: 480px;
-	height: 480px;
-	background-position: center;
-	background-size: cover;
-	width: 100%;
-	box-sizing: border-box;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-ms-grid-row-align: center;
-	align-items: center;
-}
-
-.about-tabs .tab-content .panel-text-div .panel-text {
-	max-width: 600px;
-	margin: 0 auto;
-	padding-top: 200px;
-	color: #fff;
-}
-
-.about-tabs .tab-content .panel-text-div .panel-text h1 {
-	font-family: "NHaasGrotesk-b", Helvetica, Verdana, Sans-Serif;
-}
-
-.about-tabs .tab-content .panel-text-div .panel-text p {
-	font-style: italic;
-	font-size: 16px;
-}
-
 .about-tabs .strategy-header {
 	padding-bottom: 10px;
 }
@@ -1280,6 +1249,35 @@ footer .footer-copyright p {
 
 .about-tabs .strategy-list-i h1 {
 	font-family: "NHaasGrotesk-b", Helvetica, Verdana, Sans-Serif;
+}
+
+.panel-text-div {
+	height: 480px;
+	height: 480px;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-ms-grid-row-align: center;
+	align-items: center;
+}
+
+.panel-text-div .panel-text {
+	max-width: 600px;
+	margin: 0 auto;
+	padding-top: 200px;
+	color: #fff;
+}
+
+.panel-text-div .panel-text h1 {
+	font-family: "NHaasGrotesk-b", Helvetica, Verdana, Sans-Serif;
+}
+
+.panel-text-div .panel-text p {
+	font-style: italic;
+	font-size: 16px;
 }
 
 .sticky-register-footer {
@@ -1395,12 +1393,13 @@ footer .footer-copyright p {
 	margin: 0;
 }
 
+.about-post .about-read-more ul a {
+	color: #232426;
+}
+
 .about-post .about-read-more li {
 	padding-left: 1em;
 	text-indent: -.7em;
-}
-.about-post .about-read-more a{
-	color: #232426;
 }
 
 .about-post .about-read-more li:before {
@@ -1723,6 +1722,10 @@ footer .footer-copyright p {
 
 .venture .venture-show .text-box {
 	opacity: 1 !important;
+}
+
+.practice-post .panel-text-div h1, .practice-post .panel-text-div p {
+	color: #232426;
 }
 
 .article-header {
@@ -2347,6 +2350,11 @@ footer .footer-copyright p {
 	margin-bottom: 50px;
 }
 
+#home-header-carousel .owl-controls div.owl-next:hover, #home-header-carousel .owl-controls div.owl-prev:hover {
+	background-color: #E61B86;
+	color: #fff;
+}
+
 #home-header-carousel .owl-controls div.owl-next {
 	margin-left: 20px;
 }
@@ -2616,11 +2624,21 @@ footer .footer-copyright p {
 	border: none;
 }
 
+.fox-button-d:hover {
+	background-color: #E61B86;
+	color: #fff;
+}
+
 .fox-button-l {
 	padding: 10px 15px;
 	color: #232426;
 	background-color: #fff;
 	border: none;
+}
+
+.fox-button-l:hover {
+	background-color: #E61B86;
+	color: #fff;
 }
 
 .dark-bg {

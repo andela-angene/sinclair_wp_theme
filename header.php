@@ -64,9 +64,7 @@
 		.about-tabs .tab-content #insights .panel-text-div {
 			background-image: url("<?php bloginfo('template_url'); ?>/images/about-us/about-mountain1.jpg");
 		}
-		.about-tabs .tab-content #risk .panel-text-div {
-			background-image: url("<?php bloginfo('template_url'); ?>/images/executive/risk-bg.jpg");
-		}
+		
 
 
 		.contact .col-md-6 .contact-img-sgp1 {

@@ -78,8 +78,8 @@
 
 			<div class="row news-content">
 				<div class="col-sm-6">
-					
-					
+
+
 					<?php
 						$counter = 0;
 					    while(have_posts()): the_post();
@@ -113,8 +113,8 @@
 							<a class="link-rm-default" href="javascript:void(0)"><i class="fa fa-twitter"></i></a> <a class="link-rm-default" href="javascript:void(0)"><i class="fa fa-facebook"></i></a> <a class="link-rm-default" href="javascript:void(0)"><i class="fa fa-instagram"></i></a> <a class="link-rm-default" href="javascript:void(0)"><i class="fa fa-linkedin"></i></a>
 						</div>
 					</div>
-					
-					
+
+
 					<?php endif; endwhile; ?>
 
 				</div>

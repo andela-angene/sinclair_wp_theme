@@ -92,7 +92,7 @@
 					<h3><?php the_title(); ?></h3>
 					<?php the_excerpt(); ?>
 					<div class="text-box-read-more">
-						<a href="#">Find out more</a>
+						<a href="<?php the_permalink(); ?>">Find out more</a>
 					</div>
 				</div>
 				<div class="col-sm-8 practice-image pad0">
