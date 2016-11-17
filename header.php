@@ -115,6 +115,11 @@
 			background-image: url("<?php bloginfo('template_url'); ?>/images/contact/nbo2.jpg");
 		}
 	</style>
+	<style>
+		#news-header-carousel{
+			display: none;
+		}
+	</style>
 	<?php wp_head(); ?>
 </head>
 <body>

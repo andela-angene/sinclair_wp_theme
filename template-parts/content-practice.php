@@ -27,8 +27,8 @@
 
 	<div class="panel-text-div">
 		<div class="panel-text">
-			<h1><?php the_title(); ?></h1>
-			<p><?php the_field('sub_heading'); ?></p>
+			<h1 style="color: <?php the_field('sub_heading_color'); ?>"><?php the_title(); ?></h1>
+			<p style="color: <?php the_field('sub_heading_color'); ?>"><?php the_field('sub_heading'); ?></p>
 		</div>
 	</div>
 
