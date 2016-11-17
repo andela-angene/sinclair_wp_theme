@@ -246,48 +246,64 @@
 					<!--                        about-case-studies -->
 					<section class="about-case-studies">
 						<div class="row">
+
+							<?php
+							$contact = get_field('contact1_name');
+							$contact_photo = get_field('contact1_photo');
+							if(!empty($contact) && !empty($contact_photo)): ?>
 							<div class="col-sm-4">
-								<h2>Alan Red</h2>
+								<h2><?php echo  $contact ?></h2>
 								<div class="about-case">
 									<div class="case-box hover-type">
 										<a href="javascript:void(0)">
 											<div class="case-img ">
-												<img src="<?php the_field('author_image'); ?>" alt="case study">
+												<img src="<?php echo $contact_photo ?>" alt="case study">
 											</div>
 
 										</a>
 									</div>
 								</div>
-
 							</div>
-							<div class="col-sm-4">
-								<h2>Ted Green</h2>
-								<div class="about-case">
-									<div class="case-box hover-type">
-										<a href="javascript:void(0)">
-											<div class="case-img">
-												<img src="<?php the_field('author_image'); ?>" alt="case study">
-											</div>
+							<?php endif; ?>
 
-										</a>
+
+							<?php
+							$contact = get_field('contact2_name');
+							$contact_photo = get_field('contact2_photo');
+							if(!empty($contact) && !empty($contact_photo)): ?>
+								<div class="col-sm-4">
+									<h2><?php echo  $contact ?></h2>
+									<div class="about-case">
+										<div class="case-box hover-type">
+											<a href="javascript:void(0)">
+												<div class="case-img ">
+													<img src="<?php echo $contact_photo ?>" alt="case study">
+												</div>
+
+											</a>
+										</div>
 									</div>
 								</div>
+							<?php endif; ?>
 
-							</div>
-							<div class="col-sm-4">
-								<h2>Robert Blue</h2>
-								<div class="about-case">
-									<div class="case-box hover-type">
-										<a href="javascript:void(0)">
-											<div class="case-img ">
-												<img src="<?php the_field('author_image'); ?>" alt="case study">
-											</div>
+							<?php
+							$contact = get_field('contact3_name');
+							$contact_photo = get_field('contact3_photo');
+							if(!empty($contact) && !empty($contact_photo)): ?>
+								<div class="col-sm-4">
+									<h2><?php echo  $contact ?></h2>
+									<div class="about-case">
+										<div class="case-box hover-type">
+											<a href="javascript:void(0)">
+												<div class="case-img ">
+													<img src="<?php echo $contact_photo ?>" alt="case study">
+												</div>
 
-										</a>
+											</a>
+										</div>
 									</div>
 								</div>
-
-							</div>
+							<?php endif; ?>
 						</div>
 					</section>
 
