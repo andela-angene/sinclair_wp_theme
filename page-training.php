@@ -32,7 +32,7 @@
 <section class="executive">
 	<div class="container">
 
-		<div class="row">
+		<div class="row column-991">
 			<div class="col-md-6 ">
 				<div class="row">
 					<div class="col-xs-6 text-box text-box-sm gray-box-l">
@@ -86,8 +86,8 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-6">
+		<div class="row column-991">
+			<div class="col-md-6 column-992-half">
 				<div class="row">
 					<div class="col-xs-6 text-box text-box-sm gray-box-l">
 						<div class="maintain-aspect-r">
@@ -144,11 +144,11 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row column-991">
 			<div class="col-md-6 image-box">
 				<img src="<?php bloginfo('template_url'); ?>/images/training/apply.jpg" alt="">
 			</div>
-			<div class="col-md-6 pad0">
+			<div class="col-md-6 pad0 flex-box">
 				<div class="col-xs-6 text-box pink-hover-bd text-box-sm gray-box-l">
 					<div class="maintain-aspect-r">
 						<div class="maintain-aspect-hold">
@@ -178,9 +178,9 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row column-991">
 			<div class="col-md-6">
-				<div class="row">
+				<div class="row h-100">
 					<div class="col-xs-6 text-box text-box-sm gray-box-l">
 						<div class="maintain-aspect-r">
 							<div class="maintain-aspect-hold">

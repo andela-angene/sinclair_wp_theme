@@ -87,45 +87,28 @@
 
 
 						<?php
-						$args = array(
-							'post_type' => 'post'
-						);
-						$post_counter = 0;
-						$post_query = new WP_Query($args);
-						while($post_query->have_posts()): $post_query->the_post();
-							$post_counter++;
-							if($post_counter <= 4):
-								?>
+							for ($i=1; $i <= 4; $i++):
+								if(!empty(get_field('trending'.$i.'_title') && get_field('trending'.$i.'_url'))):
+						?>
 
-								<div class="trending-item <?php if ($post_counter == 1){echo 'trending-item-active';} ?>">
+								<div class="trending-item <?php if ($i == 1){echo 'trending-item-active';} ?>">
 									<div class="trending-num">
-										<span><?php echo $post_counter ?></span>
+										<span><?php echo $i ?></span>
 										<div class="trend80"></div>
 									</div>
 									<div class="trending-text">
-										<a class="link-rm-default" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+										<a class="link-rm-default" href="<?php the_field('trending'.$i.'_url'); ?>"><?php the_field('trending'.$i.'_title') ?></a>
 
 									</div>
 								</div>
 
-							<?php endif; endwhile; ?>
+							<?php endif; endfor; ?>
 						
 					</div></div>
 			</div>
 		</div>
 
-		<?php
-		$args = array(
-			'p' => $current_post_ID,
-			'post_type' => 'any'
-		);
-		$post_query = new WP_Query($args);
-		if($post_query->have_posts() ) {
-			while($post_query->have_posts() ) :
-				$post_query->the_post();
-				?>
 
-			<?php endwhile; }; ?>
 
 		<div class="row homepage-content-row">
 			<div class="col-md-4 home-content-box">

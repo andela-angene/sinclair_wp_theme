@@ -26,7 +26,7 @@
 <section class="executive">
 	<div class="container">
 
-		<div class="row">
+		<div class="row column-991">
 			<?php
 			while(have_posts()):
 			the_post();
@@ -50,7 +50,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row column-991">
 			<div class="col-md-6">
 				<div class="row">
 					<div class="col-xs-6 image-box">
@@ -120,8 +120,8 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-6">
+		<div class="row column-991">
+			<div class="col-md-6 column-992">
 				<div class="row">
 					<div class="col-xs-6 text-box pink-hover-bd text-box-sm gray-box-l">
 						<div class="maintain-aspect-r">
@@ -195,7 +195,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 column-992">
 				<div class="row">
 					<div class="col-xs-6 image-box">
 						<img src="<?php bloginfo('template_url'); ?>/images/executive/8.jpg" alt="executive">
