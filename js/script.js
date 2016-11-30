@@ -252,6 +252,37 @@ $(document).ready(function(){
         $('a[href = "#'+aboutUsPage+'"]').tab('show');
     }
 
+    //Job Positions show or Hide
+    $('#positions-btn-show').on('click', function(){
+        $(this).hide();
+        $('#positions-btn-hide').show();
+        $('.positions-hide').slideDown();
+    });
+    $('#positions-btn-hide').on('click', function(){
+        $(this).hide();
+        $('#positions-btn-show').show();
+        $('.positions-hide').slideUp();
+    });
+
+    //launch testimonials modal
+    $(".hover-type-2").click(function(){
+
+        var client = {
+            photo: $(this).attr('data-photo'),
+            name: $(this).data('name'),
+            about: $(this).find('.testimonial-about').html(),
+            topic: $(this).find('.testimonial-topic').html(),
+            content: $(this).find('.testimonial-content').html(),
+        }
+
+        $('.pop-photo-clip img').attr('src', client.photo);
+        $('.popup-client-name').html(client.name);
+        $('#testimonial-about').html(client.about);
+        $('#testimonial-topic').html(client.topic);
+        $('#testimonial-content').html(client.content);
+
+        $('#testimonials').modal();
+    });
 
 });
 

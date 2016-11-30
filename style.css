@@ -47,7 +47,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 
-
 @charset "UTF-8";
 .fixed-navbar {
 	position: fixed;
@@ -134,6 +133,10 @@ body .display-none {
 
 body .pad0 {
 	padding: 0 !important;
+}
+
+.display-none {
+	display: none;
 }
 
 .to-upper {
@@ -656,6 +659,14 @@ body .pad0 {
 	display: flex;
 }
 
+.pt-20 {
+	padding-top: 20px;
+}
+
+.wt-backgrount {
+	background-color: #fff !important;
+}
+
 .header {
 	height: 80vh;
 	background-position: center;
@@ -957,7 +968,7 @@ footer .footer-menu .footer-socail .socail-icons {
 }
 
 footer .footer-menu .footer-socail .socail-icons i {
-	margin-right: 10px;
+	margin-right: 15px;
 	font-size: 25px;
 	color: #5b5b5b;
 	-webkit-transition: all 0.27s;
@@ -979,13 +990,14 @@ footer .footer-menu .footer-socail .bronchure {
 
 footer .footer-menu .footer-socail .bronchure img {
 	display: inline-block;
-	width: 50px;
-	margin-right: 2px;
+	width: 40px;
+	margin-right: 5px;
 }
 
 footer .footer-menu .footer-socail .bronchure a {
 	display: inline-block;
 	width: 120px;
+	font-size: 12px;
 }
 
 footer .footer-copyright .footer-logo img {
@@ -1003,7 +1015,11 @@ footer .footer-copyright p {
 	font-size: 13px;
 }
 
-.registerPopup {
+.registerPopup .register-desc img {
+	margin-top: 20px;
+}
+
+.registerPopup, .testimonials {
 	padding: 0;
 	margin: 0;
 	display: block;
@@ -1014,56 +1030,55 @@ footer .footer-copyright p {
 }
 
 @media (min-width: 767px) {
-	.registerPopup {
+	.registerPopup, .testimonials {
 		min-width: 700px;
 	}
 }
 
-.registerPopup .col-xs-6 {
+.registerPopup .col-xs-6, .testimonials .col-xs-6 {
 	box-sizing: border-box;
 	overflow: hidden;
 	height: 100%;
 }
 
-.registerPopup .col-xs-6:first-child {
+.registerPopup .col-xs-6:first-child, .testimonials .col-xs-6:first-child {
 	padding-right: 0;
 }
 
-.registerPopup .col-xs-6:last-child {
+.registerPopup .col-xs-6:last-child, .testimonials .col-xs-6:last-child {
 	padding-left: 0;
 	padding-top: 0;
 }
 
-.registerPopup .register-desc {
+.registerPopup .register-desc, .testimonials .register-desc {
 	width: 100%;
 	height: 100%;
 	padding: 20px;
 	background-color: #DADADA;
 }
 
-.registerPopup .register-desc .sinclair-btn {
+.registerPopup .register-desc .sinclair-btn, .testimonials .register-desc .sinclair-btn {
 	padding: 5px 15px;
 	background-color: #232426;
 	color: #E61B86;
 	border: none;
 }
 
-.registerPopup .register-desc img {
-	margin-top: 20px;
+.registerPopup .register-desc img, .testimonials .register-desc img {
 	width: 100%;
 	height: auto;
 }
 
-.registerPopup .register-desc .h2 {
+.registerPopup .register-desc .h2, .testimonials .register-desc .h2 {
 	color: #232426;
 	font-family: "NHaasGrotesk-b", Helvetica, Verdana, Sans-Serif;
 }
 
-.registerPopup .register-desc p {
+.registerPopup .register-desc p, .testimonials .register-desc p {
 	color: #5b5b5b;
 }
 
-.registerPopup .register-desc .socail-icons i {
+.registerPopup .register-desc .socail-icons i, .testimonials .register-desc .socail-icons i {
 	margin-top: 10px;
 	margin-right: 10px;
 	font-size: 25px;
@@ -1072,49 +1087,63 @@ footer .footer-copyright p {
 	transition: all 0.27s;
 }
 
-.registerPopup .register-desc .socail-icons i:hover {
+.registerPopup .register-desc .socail-icons i:hover, .testimonials .register-desc .socail-icons i:hover {
 	color: #E61B86;
 }
 
-.registerPopup .register-desc .socail-icons a {
+.registerPopup .register-desc .socail-icons a, .testimonials .register-desc .socail-icons a {
 	border: none !important;
 }
 
-.registerPopup .register-form-div {
+.registerPopup .register-desc .pop-photo-clip, .testimonials .register-desc .pop-photo-clip {
+	margin-top: 20px;
+	max-height: 205px;
+	overflow: hidden;
+}
+
+.registerPopup .register-form-div, .testimonials .register-form-div {
 	height: 100%;
 	background-color: #5b5b5b;
 }
 
-.registerPopup .register-form {
+.registerPopup .register-form, .testimonials .register-form {
 	background-color: #232426;
 	padding: 20px 20px 10px 20px;
 }
 
-.registerPopup .register-form h2 {
+.registerPopup .register-form h2, .testimonials .register-form h2 {
 	color: #fff;
 	margin: 0;
-	padding-bottom: 40px;
+	padding-bottom: 15px;
 }
 
-.registerPopup .register-form .form-control {
+.registerPopup .register-form form, .testimonials .register-form form {
+	padding-top: 30px;
+}
+
+.registerPopup .register-form .form-control, .testimonials .register-form .form-control {
 	width: 80%;
 	margin: 0 auto;
 	background-color: #DADADA;
-	margin-bottom: 20px;
+	margin-bottom: 35px;
 }
 
-.registerPopup .register-form .popup-form-img {
+.registerPopup .register-form p, .testimonials .register-form p {
+	color: #e8e8e8;
+}
+
+.registerPopup .register-form .popup-form-img, .testimonials .register-form .popup-form-img {
 	text-align: right;
 	padding-top: 10px;
 }
 
-.registerPopup .register-form img {
+.registerPopup .register-form img, .testimonials .register-form img {
 	width: 40px;
 	position: relative;
 	right: 0;
 }
 
-.registerPopup .registerPopup-tags {
+.registerPopup .registerPopup-tags, .testimonials .registerPopup-tags {
 	margin: 0;
 	padding: 0;
 	border-top: 2px solid #fff;
@@ -1122,7 +1151,7 @@ footer .footer-copyright p {
 	padding: 20px;
 }
 
-.registerPopup .registerPopup-tags span {
+.registerPopup .registerPopup-tags span, .testimonials .registerPopup-tags span {
 	font-size: 22px;
 	color: #fff;
 }
@@ -1738,6 +1767,23 @@ footer .footer-copyright p {
 	color: #232426;
 }
 
+.positions {
+	padding: 20px 0;
+	background-color: #232426;
+	color: #fff;
+}
+
+.positions .read-more {
+	display: inline-block;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #fff;
+	margin-bottom: 20px;
+}
+
+.positions .positions-btn {
+	padding: 10px 0;
+}
+
 .article-header {
 	text-align: center;
 	padding: 100px 0;
@@ -2124,18 +2170,18 @@ footer .footer-copyright p {
 	position: relative;
 }
 
-.news-header #news-header-carousel, .news-header #news-executive-carousel {
+.news-header #news-header-carousel, .news-header #news-executive-carousel, .news-header #news-executive-carousel-2 {
 	position: relative;
 }
 
-.news-header #news-header-carousel .owl-controls, .news-header #news-executive-carousel .owl-controls {
+.news-header #news-header-carousel .owl-controls, .news-header #news-executive-carousel .owl-controls, .news-header #news-executive-carousel-2 .owl-controls {
 	display: inline-block;
 	position: absolute;
 	top: 0;
 }
 
 @media (min-width: 768px) {
-	.news-header #news-header-carousel .owl-controls, .news-header #news-executive-carousel .owl-controls {
+	.news-header #news-header-carousel .owl-controls, .news-header #news-executive-carousel .owl-controls, .news-header #news-executive-carousel-2 .owl-controls {
 		top: 50%;
 		left: -20px;
 		-webkit-transform: translateY(-50%);
@@ -2143,64 +2189,64 @@ footer .footer-copyright p {
 	}
 }
 
-.news-header #news-header-carousel .owl-controls div.owl-next, .news-header #news-header-carousel .owl-controls div.owl-prev, .news-header #news-executive-carousel .owl-controls div.owl-next, .news-header #news-executive-carousel .owl-controls div.owl-prev {
+.news-header #news-header-carousel .owl-controls div.owl-next, .news-header #news-header-carousel .owl-controls div.owl-prev, .news-header #news-executive-carousel .owl-controls div.owl-next, .news-header #news-executive-carousel .owl-controls div.owl-prev, .news-header #news-executive-carousel-2 .owl-controls div.owl-next, .news-header #news-executive-carousel-2 .owl-controls div.owl-prev {
 	font-size: 20px;
 	padding: 5px 10px !important;
 	background-color: #fff;
 	color: #E61B86;
 }
 
-.news-header #news-header-carousel .owl-controls div.owl-next, .news-header #news-executive-carousel .owl-controls div.owl-next {
+.news-header #news-header-carousel .owl-controls div.owl-next, .news-header #news-executive-carousel .owl-controls div.owl-next, .news-header #news-executive-carousel-2 .owl-controls div.owl-next {
 	margin-top: 10px;
 }
 
-.news-header #news-header-carousel .header-news-img, .news-header #news-executive-carousel .header-news-img {
+.news-header #news-header-carousel .header-news-img, .news-header #news-executive-carousel .header-news-img, .news-header #news-executive-carousel-2 .header-news-img {
 	text-align: center;
 }
 
-.news-header #news-header-carousel .header-news-img img, .news-header #news-executive-carousel .header-news-img img {
+.news-header #news-header-carousel .header-news-img img, .news-header #news-executive-carousel .header-news-img img, .news-header #news-executive-carousel-2 .header-news-img img {
 	border: 5px solid #E61B86;
 }
 
 @media (min-width: 768px) {
-	.news-header #news-header-carousel .header-news-img img, .news-header #news-executive-carousel .header-news-img img {
+	.news-header #news-header-carousel .header-news-img img, .news-header #news-executive-carousel .header-news-img img, .news-header #news-executive-carousel-2 .header-news-img img {
 		width: 100%;
 	}
 }
 
-.news-header #news-header-carousel .header-news-text, .news-header #news-executive-carousel .header-news-text {
+.news-header #news-header-carousel .header-news-text, .news-header #news-executive-carousel .header-news-text, .news-header #news-executive-carousel-2 .header-news-text {
 	color: #fff;
 }
 
-.news-header #news-header-carousel .header-news-text h2, .news-header #news-executive-carousel .header-news-text h2 {
+.news-header #news-header-carousel .header-news-text h2, .news-header #news-executive-carousel .header-news-text h2, .news-header #news-executive-carousel-2 .header-news-text h2 {
 	font-size: 25px;
 }
 
-.news-header #news-header-carousel .header-news-text h1, .news-header #news-executive-carousel .header-news-text h1 {
+.news-header #news-header-carousel .header-news-text h1, .news-header #news-executive-carousel .header-news-text h1, .news-header #news-executive-carousel-2 .header-news-text h1 {
 	font-size: 38px;
 	font-family: "NHaasGrotesk", Helvetica, Verdana, Sans-Serif;
 }
 
-.news-header #news-header-carousel .header-news-text p, .news-header #news-executive-carousel .header-news-text p {
+.news-header #news-header-carousel .header-news-text p, .news-header #news-executive-carousel .header-news-text p, .news-header #news-executive-carousel-2 .header-news-text p {
 	font-size: 18px;
 }
 
-.news-header #news-header-carousel .header-news-text .read-more, .news-header #news-executive-carousel .header-news-text .read-more {
+.news-header #news-header-carousel .header-news-text .read-more, .news-header #news-executive-carousel .header-news-text .read-more, .news-header #news-executive-carousel-2 .header-news-text .read-more {
 	display: inline-block;
 	padding-bottom: 10px;
 	border-bottom: 2px solid #fff;
 	font-size: 18px;
 }
 
-.news-header #news-header-carousel .header-news-text .read-more i, .news-header #news-executive-carousel .header-news-text .read-more i {
+.news-header #news-header-carousel .header-news-text .read-more i, .news-header #news-executive-carousel .header-news-text .read-more i, .news-header #news-executive-carousel-2 .header-news-text .read-more i {
 	padding-left: 5px;
 }
 
-.news-header #news-header-carousel .header-news-text .read-more a, .news-header #news-executive-carousel .header-news-text .read-more a {
+.news-header #news-header-carousel .header-news-text .read-more a, .news-header #news-executive-carousel .header-news-text .read-more a, .news-header #news-executive-carousel-2 .header-news-text .read-more a {
 	border: none;
 }
 
-.news-header #news-header-carousel .header-news-text .read-more a.link-rm-default, .news-header #news-executive-carousel .header-news-text .read-more a.link-rm-default {
+.news-header #news-header-carousel .header-news-text .read-more a.link-rm-default, .news-header #news-executive-carousel .header-news-text .read-more a.link-rm-default, .news-header #news-executive-carousel-2 .header-news-text .read-more a.link-rm-default {
 	color: #fff;
 }
 
@@ -2274,24 +2320,24 @@ footer .footer-copyright p {
 	width: 100%;
 }
 
-.news .news-sidebar .news-sidebar-header {
+.news-sidebar .news-sidebar-header {
 	text-align: center;
 }
 
-.news .news-sidebar .news-sidebar-item {
+.news-sidebar .news-sidebar-item {
 	position: relative;
 	margin-bottom: 20px;
 }
 
-.news .news-sidebar .news-sidebar-item:hover .news-sidebar-pinkdiv {
+.news-sidebar .news-sidebar-item:hover .news-sidebar-pinkdiv {
 	opacity: 1;
 }
 
-.news .news-sidebar .news-sidebar-item img {
+.news-sidebar .news-sidebar-item img {
 	max-width: 100%;
 }
 
-.news .news-sidebar .news-sidebar-item .news-sidebar-pinkdiv {
+.news-sidebar .news-sidebar-item .news-sidebar-pinkdiv {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2694,6 +2740,18 @@ footer .footer-copyright p {
 	color: #fff;
 }
 
+.fox-button-p {
+	padding: 10px 15px;
+	color: #232426;
+	background-color: #E61B86;
+	border: none;
+}
+
+.fox-button-p:hover {
+	background-color: #E61B86;
+	color: #fff;
+}
+
 .dark-bg {
 	background-color: #232426;
 }
@@ -2922,3 +2980,4 @@ footer .footer-copyright p {
 	color: #E61B86;
 	font-size: 30px;
 }
+

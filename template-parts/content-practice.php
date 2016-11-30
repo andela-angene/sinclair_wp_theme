@@ -50,8 +50,41 @@
 								<?php echo wpautop($content[1]); ?>
 							</div>
 						</div>
-					</section>
 
+						<div class="news-sidebar pt-20">
+
+							<div class="news-sidebar-item col-sm-6">
+								<a target="_blank" href="https://twitter.com">
+									<img src="<?php bloginfo('template_url'); ?>/images/news/sinclair-twitter.jpg" alt="">
+									<div class="news-sidebar-pinkdiv">
+										<div class="text-center">
+											<i class="fa fa-twitter"></i><br>
+											<p>
+												Industrial Internet <br>
+												of Things
+											</p>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="news-sidebar-item col-sm-6">
+								<a target="_blank" href="https://linkedin.com">
+									<img src="<?php bloginfo('template_url'); ?>/images/news/sinclair-linked.jpg" alt="">
+
+									<div class="news-sidebar-pinkdiv">
+										<div class="text-center">
+											<i class="fa fa-linkedin"></i><br>
+											<p>
+												Industrial Internet <br>
+												of Things
+											</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</section>
 
 				</div>
 				<div class="col-sm-3">
@@ -86,7 +119,7 @@
 		</div>
 	</section>
 
-
+<!-- NEWS -->
 	<section class="news-header">
 		<div class="container">
 
@@ -166,7 +199,6 @@
 							<?php the_field('section3_content'); ?>
 
 						</div>
-
 					</div>
 
 
@@ -230,13 +262,227 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-9">
-					<h2>Lorem Ipsum is simply dummy text.</h2>
+					<h2><?php the_field('section4_heading') ?></h2>
+
 					<?php the_field('section4_content') ?>
 
-					<br>
-					<br>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+<!--	Career Positions -->
+	<div class="positions">
+		<div class="container">
+			<div class="positions-heading pink-text text-center">
+				<h2>Latest Position Available</h2>
+			</div>
+
+			<div class="row positions-show">
+			<?php
+			$args = array(
+				'post_type' => 'careers'
+			);
+
+			$post_query = new WP_Query($args);
+			if($post_query->have_posts() ) {
+			$count = 0;
+			while($post_query->have_posts() ) :
+			$count++;
+			$post_query->the_post();
+			if($count <= 2):
+			?>
+
+				<div class="col-md-6">
+					<div class="header-news-text col-sm-11">
+						<h3>
+							CAREERS <span class="light-text to-upper"><?php echo get_the_date('| D | F d'); ?></span>
+						</h3>
+						<h2>
+							<?php the_title(); ?>
+						</h2>
+						<div class="light-text">
+							<?php wpautop(the_excerpt()); ?>
+						</div>
+
+						<div class="read-more">
+							<a class="pink-text" href="javascript:void(0)">
+								Read more
+							</a> |
+							<a class="pink-text" href="javascript:void(0)">Send your CV</a>
+						</div>
+					</div>
+				</div>
+
+			<?php endif; endwhile; } ?>
+
+			</div>
+
+
+			<div class="positions-hide display-none">
+				<div class="row">
+					<?php
+					$count = 0;
+					while($post_query->have_posts() ) :
+						$count++;
+						$post_query->the_post();
+						if($count > 2): ?>
+
+							<div class="col-md-6">
+								<div class="header-news-text col-sm-11">
+									<h3>
+										CAREERS <span class="light-text to-upper"><?php echo get_the_date('| D | F d'); ?></span>
+									</h3>
+									<h2>
+										<?php the_title(); ?>
+									</h2>
+									<div class="light-text">
+										<?php wpautop(the_excerpt()); ?>
+									</div>
+
+									<div class="read-more">
+										<a class="pink-text" href="javascript:void(0)">
+											Read more
+										</a> |
+										<a class="pink-text" href="javascript:void(0)">Send your CV</a>
+									</div>
+								</div>
+							</div>
+
+					<?php
+					    if($count%2 == 0){
+						    echo '</div><div class="row">';
+					    }
+					?>
+
+					<?php endif; endwhile; ?>
+
+				</div>
+
+			</div>
+
+
+			<div class="positions-btn text-center">
+				<a id="positions-btn-show" class="link-rm-default" href="javascript:void(0)"><i class="fox-button-p fa fa-chevron-down"></i></a>
+
+				<a id="positions-btn-hide" class="link-rm-default display-none" href="javascript:void(0)"><i class="fox-button-p fa fa-chevron-up"></i></a>
+			</div>
+		</div>
+	</div>
+
+	<?php
+	$args = array(
+		'p' => $current_post_ID,
+		'post_type' => 'any'
+	);
+
+	$post_query = new WP_Query($args);
+	if($post_query->have_posts() ) {
+		while($post_query->have_posts() ) :
+			$post_query->the_post();
+			?>
+
+		<?php endwhile; }; ?>
+
+	<section class="about-post">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+					<h2><?php the_field('section3_heading'); ?></h2>
+					<div class="row post-list">
+						<div class="col-sm-12">
+							<?php the_field('section3_content'); ?>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+<!--	Testimonials -->
+	<div class="about-post">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+					<h2>What Our Clients <span class="pink-text">Say About Us</span></h2>
+					<p>
+						If you have any additional questions or require further clarification, please do not hesitate to <span class="pink-text">call me or send me an email</span>
+					</p>
 					<br>
 
+					<!--                 testimonials      -->
+					<section class="about-case-studies">
+						<div class="row">
+
+							<?php
+							for($i = 0; $i <= 3; $i++){
+								$client = get_field('client'.$i);
+								$client_photo = get_field('client'.$i.'_photo');
+								$client_about = get_field('client'.$i.'_about');
+								$client_topic = get_field('client'.$i.'_topic');
+								$client_testimonial = get_field('client'.$i.'_testimonial');
+							if(!empty($client) && !empty($client_photo)): ?>
+
+								<div class="col-sm-4">
+									<h2><?php echo $client ?></h2>
+									<div class="about-case">
+										<div class="case-box hover-type-2" data-photo='<?php echo $client_photo ?>' data-name='<?php echo $client ?>'>
+											<a href="javascript:void(0)">
+												<div class="case-img ">
+													<img src="<?php echo $client_photo ?>" alt="case study">
+												</div>
+												<div class="case-hover">
+													<h2>Read <br> More</h2>
+												</div>
+											</a>
+											<div style="display:none">
+												<div class="testimonial-about">
+													<?php echo $client_about ?>
+												</div>
+												<div class="testimonial-topic">
+													<?php echo $client_topic ?>
+												</div>
+												<div class="testimonial-content">
+													<?php echo $client_testimonial ?>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							<?php endif;} ?>
+
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="about-post" >
+		<div class="container " style="margin-top: 0; padding-top: 0;">
+			<div class="row">
+				<div class="col-sm-9">
+					<h2><?php the_field('section5_heading'); ?></h2>
+					<div class="row post-list">
+						<div class="col-sm-12">
+							<?php the_field('section5_content'); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="about-post">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
 					<h2>DROP US AN EMAIL</h2>
 					<p>
 						If you have any additional questions or require further clarification, please do not hesitate to <span class="pink-text">call me or send me an email</span>
@@ -259,7 +505,9 @@
 											<div class="case-img ">
 												<img src="<?php echo $contact_photo ?>" alt="case study">
 											</div>
-
+											<div class="case-hover">
+												<img src="<?php bloginfo('template_url'); ?>/images/practices/mail-phone.png" alt="">
+											</div>
 										</a>
 									</div>
 								</div>
@@ -279,7 +527,9 @@
 												<div class="case-img ">
 													<img src="<?php echo $contact_photo ?>" alt="case study">
 												</div>
-
+												<div class="case-hover">
+													<img src="<?php bloginfo('template_url'); ?>/images/practices/mail-phone.png" alt="">
+												</div>
 											</a>
 										</div>
 									</div>
@@ -298,7 +548,9 @@
 												<div class="case-img ">
 													<img src="<?php echo $contact_photo ?>" alt="case study">
 												</div>
-
+												<div class="case-hover">
+													<img src="<?php bloginfo('template_url'); ?>/images/practices/mail-phone.png" alt="">
+												</div>
 											</a>
 										</div>
 									</div>
@@ -312,4 +564,68 @@
 			</div>
 		</div>
 	</section>
+</div>
+
+
+<!-- Modal Testimonials-->
+<div class="modal fade" id="testimonials" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content testimonials">
+			<div class="row">
+
+
+				<div class="col-xs-6">
+					<div class="register-desc">
+						<button class="sinclair-btn"><i class="fa fa-chevron-left"></i></button>
+						<br>
+						<div class="pop-photo-clip">
+							<img src="images/practices/adam-rose.jpg" alt="register">
+						</div>
+
+						<div class="h2 popup-client-name">Adam Ross</div>
+						<div id="testimonial-about">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut qui sint, accusamus est odit, commodi praesentium soluta illo laboriosam nesciunt dolore, libero doloremque facilis rem, provident officiis ratione expedita non!
+							</p>
+						</div>
+
+						<div class="socail-icons text-center">
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-linkedin"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
+							<a href="#"><i class="fa fa-facebook"></i></a>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-xs-6"><div class="register-form-div">
+						<div class="register-form">
+							<h2 id="testimonial-topic" class="text-center">A Real
+								<strong class="pink-text">
+									Success
+								</strong>
+							</h2>
+							<div id="testimonial-content">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam error quisquam, dolorem in quis nostrum beatae ipsa magni illo, iure, culpa officiis dolor dolore vel impedit voluptatibus aliquam perferendis at!
+								</p>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam error quisquam, dolorem in quis nostrum beatae ipsa magni illo, iure, culpa officiis dolor dolore vel impedit voluptatibus aliquam perferendis at!
+								</p>
+							</div>
+
+
+						</div>
+
+						<div class="registerPopup-tags">
+							<p>
+								<span>TAGS:</span> Education, pasta, mandarina, nonna Rina, Challenge, Water, Food, Nutella
+							</p>
+						</div>
+					</div></div>
+
+
+			</div>
+		</div>
+	</div>
 </div>
